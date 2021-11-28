@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RiddleFragment1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/riddle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/riddle_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="24sp"
+        android:textSize="30sp"
+        android:layout_marginTop="72dp"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/riddle_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/riddle"
+        android:layout_marginHorizontal="72dp"
+        android:layout_marginTop="48dp"/>
+
+    <Button
+        android:id="@+id/check_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/riddle_answer"
+        app:layout_constraintTop_toBottomOf="@id/riddle_answer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Check"
+        android:textStyle="bold"
+        android:layout_gravity="end"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/correct_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="32dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingVertical="32dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yayyy!! You solved it"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/next_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next" />
+
+        <Button
+            android:id="@+id/main_menu_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level Select Menu" />
+
+    </LinearLayout>
+
+</RelativeLayout>
