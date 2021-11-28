@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PuzMania">
         <activity
+            android:name=".AnagramActivity"
+            android:exported="false" />
+        <activity
             android:name=".TypeSelectActivity"
             android:exported="false" />
         <activity
