@@ -9,5 +9,18 @@
         android:id="@+id/anagramLevelSelectFragment"
         android:name="com.mobolajialabi.puzmania.AnagramLevelSelectFragment"
         android:label="fragment_anagram_level_select"
-        tools:layout="@layout/fragment_anagram_level_select" />
+        tools:layout="@layout/fragment_anagram_level_select" >
+        <action
+            android:id="@+id/action_anagramLevelSelectFragment_to_anagramFragment"
+            app:destination="@id/anagramFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/anagramFragment"
+        android:name="com.mobolajialabi.puzmania.AnagramFragment"
+        android:label="fragment_anagram"
+        tools:layout="@layout/fragment_anagram" >
+        <action
+            android:id="@+id/action_anagramFragment_to_anagramLevelSelectFragment"
+            app:destination="@id/anagramLevelSelectFragment" />
+    </fragment>
 </navigation>

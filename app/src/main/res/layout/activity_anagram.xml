@@ -13,7 +13,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:nav_graph="@navigation/anagram_nav"
+        app:navGraph="@navigation/anagram_nav"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"/>
 
