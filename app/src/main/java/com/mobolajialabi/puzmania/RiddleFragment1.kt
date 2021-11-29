@@ -5,14 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.Toast
+import android.widget.*
+import androidx.navigation.fragment.findNavController
 
 class RiddleFragment1 : Fragment() {
 
-    private val answer: String = "g"
+    private lateinit var answer: String
+    private lateinit var riddle: String
+    private var level: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,6 +20,13 @@ class RiddleFragment1 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_riddle1, container, false)
+        if (arguments != null){
+            level = requireArguments().getInt("level")
+            riddle = requireArguments().getString("riddle").toString()
+            answer = requireArguments().getString("level").toString()
+        }
+        view.findViewById<TextView>(R.id.riddle).text = riddle
+
         view.findViewById<Button>(R.id.check_btn).setOnClickListener {
             val ans = view.findViewById<EditText>(R.id.riddle_answer).text.toString()
 
@@ -31,19 +38,11 @@ class RiddleFragment1 : Fragment() {
         }
 
         view.findViewById<Button>(R.id.next_btn).setOnClickListener {  }
-        view.findViewById<Button>(R.id.main_menu_btn).setOnClickListener {  }
+        view.findViewById<Button>(R.id.main_menu_btn).setOnClickListener {
+            findNavController().navigate(R.id.action_riddleFragment1_to_riddleLevelSelectFragment)
+        }
 
 
         return view
-    }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RiddleFragment1().apply {
-                arguments = Bundle().apply {
-                }
-            }
     }
 }

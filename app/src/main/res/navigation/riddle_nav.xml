@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/riddle_nav">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/riddle_nav"
+    app:startDestination="@id/riddleLevelSelectFragment">
 
+    <fragment
+        android:id="@+id/riddleLevelSelectFragment"
+        android:name="com.mobolajialabi.puzmania.RiddleLevelSelectFragment"
+        android:label="fragment_riddle_level_select"
+        tools:layout="@layout/fragment_riddle_level_select" >
+        <action
+            android:id="@+id/action_riddleLevelSelectFragment_to_riddleFragment1"
+            app:destination="@id/riddleFragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/riddleFragment1"
+        android:name="com.mobolajialabi.puzmania.RiddleFragment1"
+        android:label="fragment_riddle1"
+        tools:layout="@layout/fragment_riddle1" >
+        <action
+            android:id="@+id/action_riddleFragment1_to_riddleLevelSelectFragment"
+            app:destination="@id/riddleLevelSelectFragment" />
+        <argument
+            android:name="riddle"
+            app:argType="string"
+            android:defaultValue="Riddle" />
+        <argument
+            android:name="answer"
+            app:argType="string"
+            android:defaultValue="answer" />
+        <argument
+            android:name="level"
+            app:argType="integer" />
+    </fragment>
 </navigation>
